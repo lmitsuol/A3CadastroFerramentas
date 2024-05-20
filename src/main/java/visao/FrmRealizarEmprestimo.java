@@ -39,7 +39,6 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         JTFIdFerramenta = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        JTFDataEmprestimo = new com.toedter.calendar.JDateChooser();
         JBCancelar = new javax.swing.JButton();
         JBConfirmar = new javax.swing.JButton();
 
@@ -62,8 +61,6 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Data:");
-
-        JTFDataEmprestimo.setDateFormatString("dd-MM-yyyy");
 
         JBCancelar.setText("Cancelar");
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,12 +87,9 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JTFIdFerramenta, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(JTFDataEmprestimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(JTFNomeAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -120,9 +114,7 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JTFIdFerramenta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(JTFDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4)
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JBConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
@@ -182,11 +174,11 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
             } else {
                 id = Integer.parseInt(this.JTFIdFerramenta.getText());
             }
-            Date dataSelecionada = this.JTFDataEmprestimo.getDate();
+           // Date dataSelecionada = this.JTFDataEmprestimo.getDate();
 
             // Formatando a data como uma string no formato desejado
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String dataTexto = sdf.format(dataSelecionada);
+            //String dataTexto = sdf.format(dataSelecionada);
 
             JOptionPane.showMessageDialog(null,"Empréstimo realizado com sucesso!");
             
@@ -240,7 +232,6 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBCancelar;
     private javax.swing.JButton JBConfirmar;
-    private com.toedter.calendar.JDateChooser JTFDataEmprestimo;
     private javax.swing.JTextField JTFIdFerramenta;
     private javax.swing.JTextField JTFNomeAmigo;
     private javax.swing.JLabel jLabel1;
@@ -248,4 +239,10 @@ public class FrmRealizarEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+
+    private class JTFDataEmprestimo {
+
+        public JTFDataEmprestimo() {
+        }
+    }
 }
